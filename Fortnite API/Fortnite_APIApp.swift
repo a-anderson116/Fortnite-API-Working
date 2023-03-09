@@ -11,7 +11,7 @@ import SwiftUI
 struct Fortnite_APIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(eventList: ["" : ""])
         }
     }
 }
