@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD075CB629C0BE6000B0E129 /* Region View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD075CB529C0BE5F00B0E129 /* Region View.swift */; };
 		AD1A8D0F29B6422000BA4084 /* Fortnite_APIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A8D0E29B6422000BA4084 /* Fortnite_APIApp.swift */; };
 		AD1A8D1129B6422000BA4084 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A8D1029B6422000BA4084 /* ContentView.swift */; };
 		AD1A8D1329B6422100BA4084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1A8D1229B6422100BA4084 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD075CB529C0BE5F00B0E129 /* Region View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Region View.swift"; sourceTree = "<group>"; };
 		AD1A8D0B29B6422000BA4084 /* Fortnite API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fortnite API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1A8D0E29B6422000BA4084 /* Fortnite_APIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortnite_APIApp.swift; sourceTree = "<group>"; };
 		AD1A8D1029B6422000BA4084 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				AD1A8D0E29B6422000BA4084 /* Fortnite_APIApp.swift */,
 				AD1A8D1029B6422000BA4084 /* ContentView.swift */,
+				AD075CB529C0BE5F00B0E129 /* Region View.swift */,
 				AD1A8D1229B6422100BA4084 /* Assets.xcassets */,
 				AD1A8D1429B6422100BA4084 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1A8D1129B6422000BA4084 /* ContentView.swift in Sources */,
+				AD075CB629C0BE6000B0E129 /* Region View.swift in Sources */,
 				AD1A8D0F29B6422000BA4084 /* Fortnite_APIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

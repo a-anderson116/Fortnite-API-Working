@@ -9,102 +9,74 @@ import SwiftUI
 import Foundation
 
 struct ContentView: View {
-    @State var eventList: Dictionary<String, String>
-    @State var TourneyData = ""
+    // @State var Regions = []
+   // let Regions = [String("NAC"), String("ME"), String("EU"), String("ASIA"), String("OCE"), String("BR")]
+    
     var body: some View {
         NavigationView{
-                    VStack{
-                        
-                        Text(TourneyData).font(.system(size: 5))
-                        
-                        
-                    }
-                  }
-        .task{
-                await GetData()
-                
-            }
-              }
+            VStack{
+                Text("Please Choose a Region").font(.system(size:30)).fontWeight(.heavy).bold()
+                    .padding()
+                Spacer()
+                HStack{
+                    NavigationLink(
+                        destination: Region_View(eventList: ["" : ""], Regions: "NAC"),
+                                       label: {
+                                           Text("NAC")
+                                       }).buttonStyle(CustomButtonStyle())
+                    NavigationLink(
+                        destination: Region_View(eventList: ["" : ""], Regions: "OCE"),
+                                       label: {
+                                           Text("OCE")
+                                       }).buttonStyle(CustomButtonStyle())
+                    NavigationLink(
+                        destination: Region_View(eventList: ["" : ""], Regions: "ME"),
+                                       label: {
+                                           Text("ME")
+                                       }).buttonStyle(CustomButtonStyle())
+                    NavigationLink(
+                        destination: Region_View(eventList: ["" : ""], Regions: "EU"),
+                                       label: {
+                                           Text("EU")
+                                       }).buttonStyle(CustomButtonStyle())
+                }
+                HStack{
+                    NavigationLink(
+                        destination: Region_View(eventList: ["" : ""], Regions: "BR"),
+                                       label: {
+                                           Text("BR")
+                                       }).buttonStyle(CustomButtonStyle())
+                    NavigationLink(
+                        destination: Region_View(eventList: ["" : ""], Regions: "ASIA"),
+                                       label: {
+                                           Text("ASIA")
+                                       }).buttonStyle(CustomButtonStyle())
+                }
+                Spacer()
+                }
             
-    func GetData() async{
-        let apiUrl = "https://fortniteapi.io/v1/events/list?lang=en&region=All&showArena=false"
-
-        // Create a URL object from the string =
-        let url = URL(string: apiUrl)
-
-        // Create a URL request object
-        var request = URLRequest(url: url!)
-
-        // Set the HTTP method to GET
-        request.httpMethod = "GET"
-
-        // Add the API key as an HTTP header
-        let apiKey = "30492435-463fceb0-62064001-574ba7d3"
-        request.addValue(apiKey, forHTTPHeaderField: "Authorization")
-
-        // Create a URL session object
-        let session = URLSession.shared
-
-        // Create a data task to retrieve data from the API
-        let task = session.dataTask(with: request) { data, response, error in
-            // Check for errors
-            guard error == nil else {
-                print("Error: \(error!)")
-                return
-            }
-            
-            // Check for response status code
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                print("Invalid response")
-                return
-            }
-            
-            // Check for data
-            guard let jsonData = data else {
-                print("No data returned")
-                return
-            }
-            
-            // Parse the JSON data using JSONDecoder
-            let decoder = JSONDecoder()
-            
-            do {
-                let decodedData = try decoder.decode(Events.self, from: jsonData)
-                print("Data: \(decodedData)")
-                TourneyData = "Data: \(decodedData)"
-            } catch {
-                print("Error decoding JSON data: \(error)")
             }
         }
-        task.resume()
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(eventList: ["" : ""])
-    }
-}
-struct Events: Codable {
-    var events: [Data]
     
-    enum CodingKeys : String, CodingKey{
-        case events = "events"
-       
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
+    }
+struct CustomButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width:55)
+            .font(Font.custom("Coolvetica", size: 24))
+            .padding()
+            .background(.blue).opacity(configuration.isPressed ? 0.0 : 1.0)
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
-struct Data: Identifiable, Codable{
-    var id = UUID()
-    var name: String
-    var mode: String
+
     
-    enum CodingKeys : String, CodingKey{
-        case name = "name_line1"
-        case mode = "name_line2"
-        
-    }
-}
-
-
+    
+    
 
