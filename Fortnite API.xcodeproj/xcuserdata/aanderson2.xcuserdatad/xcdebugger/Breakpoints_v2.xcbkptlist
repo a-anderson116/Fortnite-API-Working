@@ -3,4 +3,54 @@
    uuid = "E933DFF4-BE0C-449D-AEBF-3B601EB187C0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6F386BD-98AA-41CA-AB25-9BDF3CDB48A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fortnite API/Region View.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "Events"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "D6F386BD-98AA-41CA-AB25-9BDF3CDB48A4 - 8189dbe418274c82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fortnite_API.Events.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;Fortnite_API.Events.CodingKeys&gt;"
+                  moduleName = "Fortnite API"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aanderson2/Desktop/Mobile%20%20Apps%20Sem%202/Fortnite%20API/Fortnite%20API/Region%20View.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "D6F386BD-98AA-41CA-AB25-9BDF3CDB48A4 - 4959ed8c85007ab8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fortnite_API.Events.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "Fortnite API"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aanderson2/Desktop/Mobile%20%20Apps%20Sem%202/Fortnite%20API/Fortnite%20API/Region%20View.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -10,14 +10,33 @@ import SwiftUI
 struct Region_View: View {
     @State var eventList: Dictionary<String, String>
     @State var TourneyData = ""
-    @State var data = [Data]()
+    @State private var data = [Data]()
     var Regions: String
     @State private var showingAlert = false
 
     var body: some View {
         
-        Text(TourneyData)
-        
+        NavigationView {
+            List{
+               
+                    ForEach(data) { event in
+                        NavigationLink{
+                        Text("\(event.desc1)")
+                            Text("\(event.desc2)")
+                            AsyncImage(url: URL(string: "\(event.image)")) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 200, height: 300)
+                            } placeholder: {
+                                // placeholder view
+                            }
+                            //AsyncImage(url: URL(string: "\(event.image)"))
+                        } label: {
+                            Text("\(event.name) - \(event.mode)")
+                        }
+                }
+            }
+        }
         .task{
             await GetData()
             
@@ -50,7 +69,7 @@ struct Region_View: View {
         let session = URLSession.shared
         
         // Create a data task to retrieve data from the API
-        let task = session.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: request) { data1, response, error in
             // Check for errors
             guard error == nil else {
                 print("Error: \(error!)")
@@ -65,7 +84,7 @@ struct Region_View: View {
             }
             
             // Check for data
-            guard let jsonData = data else {
+            guard let jsonData = data1 else {
                 print("No data returned")
                 return
             }
@@ -76,7 +95,7 @@ struct Region_View: View {
             do {
                 let decodedData = try decoder.decode(Events.self, from: jsonData)
                 print("Data: \(decodedData)")
-                TourneyData = "Data: \(decodedData)"
+                data = decodedData.events
             } catch {
                 print("Error decoding JSON data: \(error)")
             }
@@ -103,11 +122,14 @@ struct Data: Identifiable, Codable{
     var id = UUID()
     var name: String
     var mode: String
-    
+    var desc1: String
+    var desc2: String
+    var image: String
     enum CodingKeys : String, CodingKey{
         case name = "name_line1"
         case mode = "name_line2"
-        
-        
+        case desc1 = "short_description"
+        case desc2 = "long_description"
+        case image = "poster"
     }
 }
