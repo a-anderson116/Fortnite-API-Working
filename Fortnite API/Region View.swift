@@ -13,10 +13,7 @@ struct Region_View: View {
     @State private var data = [Data]()
     var Regions: String
     @State private var showingAlert = false
-
     var body: some View {
-        
-        NavigationView {
             List{
                
                     ForEach(data) { event in
@@ -26,17 +23,16 @@ struct Region_View: View {
                             AsyncImage(url: URL(string: "\(event.image)")) { image in
                                 image
                                     .resizable()
-                                    .frame(width: 200, height: 300)
+                                    .frame(width: 350, height: 500)
                             } placeholder: {
                                 // placeholder view
                             }
-                            //AsyncImage(url: URL(string: "\(event.image)"))
                         } label: {
                             Text("\(event.name) - \(event.mode)")
                         }
                 }
-            }
-        }
+            } .navigationTitle("\(Regions)")
+        
         .task{
             await GetData()
             
@@ -50,7 +46,7 @@ struct Region_View: View {
         
         }
     func GetData() async{
-        let apiUrl = "https://fortniteapi.io/v1/events/list?lang=en&region=\(Regions)&showArena=false"
+        let apiUrl = "https://fortniteapi.io/v1/events/list/active?lang=en&region=\(Regions)&showArena=false"
         
         // Create a URL object from the string =
         let url = URL(string: apiUrl)
