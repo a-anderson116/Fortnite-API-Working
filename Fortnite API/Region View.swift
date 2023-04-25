@@ -1,5 +1,5 @@
 //
-//  Region View.swift
+//  RegionView.swift
 //  Fortnite API
 //
 //  Created by Alex Anderson on 3/14/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Region_View: View {
+struct RegionView: View {
     @State var eventList: Dictionary<String, String>
     @State var TourneyData = ""
     @State private var data = [Data]()
@@ -102,7 +102,7 @@ struct Region_View: View {
 
     struct Region_View_Previews: PreviewProvider {
         static var previews: some View {
-            Region_View(eventList: ["" : ""], Regions: String())
+            RegionView(eventList: ["" : ""], Regions: String())
         }
     }
 
