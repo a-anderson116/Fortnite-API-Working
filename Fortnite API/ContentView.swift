@@ -20,34 +20,34 @@ struct ContentView: View {
                 Spacer()
                 HStack{
                     NavigationLink(
-                        destination: Region_View(eventList: ["" : ""], Regions: "NAC"),
+                        destination: RegionView(eventList: ["" : ""], Regions: "NAC"),
                                        label: {
                                            Text("NAC")
                                        }).buttonStyle(CustomButtonStyle())
                     NavigationLink(
-                        destination: Region_View(eventList: ["" : ""], Regions: "OCE"),
+                        destination: RegionView(eventList: ["" : ""], Regions: "OCE"),
                                        label: {
                                            Text("OCE")
                                        }).buttonStyle(CustomButtonStyle())
                     NavigationLink(
-                        destination: Region_View(eventList: ["" : ""], Regions: "ME"),
+                        destination: RegionView(eventList: ["" : ""], Regions: "ME"),
                                        label: {
                                            Text("ME")
                                        }).buttonStyle(CustomButtonStyle())
                     NavigationLink(
-                        destination: Region_View(eventList: ["" : ""], Regions: "EU"),
+                        destination: RegionView(eventList: ["" : ""], Regions: "EU"),
                                        label: {
                                            Text("EU")
                                        }).buttonStyle(CustomButtonStyle())
                 }
                 HStack{
                     NavigationLink(
-                        destination: Region_View(eventList: ["" : ""], Regions: "BR"),
+                        destination: RegionView(eventList: ["" : ""], Regions: "BR"),
                                        label: {
                                            Text("BR")
                                        }).buttonStyle(CustomButtonStyle())
                     NavigationLink(
-                        destination: Region_View(eventList: ["" : ""], Regions: "ASIA"),
+                        destination: RegionView(eventList: ["" : ""], Regions: "ASIA"),
                                        label: {
                                            Text("ASIA")
                                        }).buttonStyle(CustomButtonStyle())
