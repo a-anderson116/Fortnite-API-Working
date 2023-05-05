@@ -15,8 +15,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("Please Choose a Region").font(.system(size:30)).fontWeight(.heavy).bold()
+                Text("Welcome to Fortnite Tourney         Checker").font(.system(size:30)).fontWeight(.heavy).bold()
                     .padding()
+                Text("Please Choose a Region").font(.system(size:30)).fontWeight(.heavy).bold()
+                   
                 Spacer()
                 HStack{
                     NavigationLink(
